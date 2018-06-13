@@ -19,7 +19,8 @@ module.exports=function(nodeServer){ return new (function(){
     app.get('/', function(req, res){
       app.use("/",express.static('./client'));
       app.use("/shared",express.static('./shared'));
-      res.sendFile(file);
+      // res.sendFile(file);
+      res.send('online')
     });
     http.listen(httpPort, function(){
       console.log('listening on :'+httpPort);
